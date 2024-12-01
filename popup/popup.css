@@ -1,0 +1,175 @@
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(135deg, #8e9ad2, #6f98b8, #5c84a6);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f4f4f9;
+}
+
+::-webkit-scrollbar-button:end:increment {
+    height: 8%;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#chatContainer {
+    padding: 0 10px 0 10px;
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: none;
+    margin: none;
+    background-color: #f4f4f9;
+}
+
+#chatHistory {
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 100%;
+    padding: 0 10px 60px 10px;
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.2s ease;
+    gap: 20px;
+    transform: translateY(5%);
+}
+
+#inputWrapper {
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+    background-color: white;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+#userInput {
+    width: calc(100% - 60px);
+    border: none;
+    border-radius: 25px;
+    padding: 16px;
+    background-color: transparent;
+}
+
+#userInput:focus {
+    outline: none;
+}
+
+#sendButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-image: linear-gradient(135deg, #8e9ad2, #6f98b8, #5c84a6);
+    border: none;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: border 0.2s ease-in-out;
+}
+
+#sendButton:hover {
+    border: 1px solid #000000;
+}
+
+#clearButton {
+    color: #888; 
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#clearButton:hover {
+    color: #75b7da;
+}
+
+.userReq {
+    background-image: linear-gradient(135deg, #8e9ad2, #6f98b8, #5c84a6);
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 70%;
+    align-self: flex-end;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+    word-wrap: break-word;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.userReq:hover{
+    transform: scale(1.05);
+}
+
+.botRes {
+    background-image: linear-gradient(135deg, #4993e5, #9177c7, #cb6672);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 70%;
+    text-align: left;
+    align-self: flex-start;
+    word-wrap: break-word;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.botRes:hover{
+    transform: scale(1.05);
+}
+
+.copyButton {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    bottom: -25px; 
+    left: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.copyButton i {
+    font-size: 14px;
+    background: linear-gradient(135deg, #4993e5, #9177c7, #cb6672);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.copyButton:hover i {
+    transform: scale(1.1);
+}
