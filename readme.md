@@ -15,7 +15,7 @@ Gemini Built-in Chatbot is a Chrome extension that allows you to use a chatbot p
 
   
 
-- Begin by downloading the latest release under the releases tab on the right and selecting the Source code zip file.
+- Begin by downloading the latest release under the releases tab on the right and selecting the **Gemini_Built-in_Chatbot** zip file.
 - Unzip the zip file and make sure all the contents are in one folder
 
 - Then, go to the Extensions page by entering chrome://extensions in a new tab
