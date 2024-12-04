@@ -59,7 +59,7 @@ html, body{
 }
 
 #userInput {
-    width: calc(100% - 100px);
+    width: calc(100% - 70px);
     border: none;
     border-radius: 25px;
     padding: 16px;
