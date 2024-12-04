@@ -2,15 +2,29 @@ chrome.runtime.onInstalled.addListener(() => {
     console.log("installed")
 });
 
-chrome.commands.onCommand.addListener((command) => {
+chrome.action.onClicked.addListener(() => {
+    chrome.windows.getCurrent({populate: true}, (window) => {
+        const windowId = window.id;
+        chrome.sidePanel.open({windowId});
+    })
+})
+
+chrome.commands.onCommand.addListener(async(command) => {
     if(command === 'open-chatbot'){
-        chrome.action.openPopup();
+        chrome.sidePanel.setOptions({
+            path: 'panel/panel.html',
+            enabled: true,
+        });
+
+        chrome.windows.getCurrent({populate: true}, (window) => {
+            const windowId = window.id;
+            chrome.sidePanel.open({windowId});
+        })
     }
 })
 
 chrome.runtime.onMessage.addListener(async(req, sender, sendResponse) => {
     if(req.action === 'sendReq'){
-        console.log("Request received from popup")
         const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
         let pageUrl;
         try{

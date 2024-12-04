@@ -2,12 +2,11 @@
   "manifest_version": 3,
   "name": "Gemini Built-In Chatbot",
   "version": "1.0",
-  "permissions": ["storage", "identity", "notifications", "activeTab", "commands"],
+  "permissions": ["storage", "identity", "notifications", "activeTab", "commands", "sidePanel"],
   "background": {
       "service_worker": "background.js"
   },
   "action": {
-      "default_popup": "popup/popup.html",
       "default_icon": {
           "16": "images/ChatbotLogo16.png",
           "48": "images/ChatbotLogo48.png",
@@ -25,5 +24,8 @@
   "host_permissions": [
     "http://*/*",
     "https://*/*"
-  ]
+  ],
+  "side_panel":{
+    "default_path": "panel/panel.html"
+  }
 }
